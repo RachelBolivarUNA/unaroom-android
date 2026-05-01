@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Firebase — project-specific; download from Firebase Console (do not commit real keys in public repos).
+app/google-services.json

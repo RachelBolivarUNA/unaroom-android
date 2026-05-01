@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.moviles.unaroom.core.UserMessages
 import com.moviles.unaroom.data.Classroom
 import com.moviles.unaroom.ui.theme.AppBorder
 import com.moviles.unaroom.ui.theme.AppIconTint
@@ -28,10 +29,12 @@ import com.moviles.unaroom.ui.theme.AppSecondaryText
 @Composable
 fun ClassroomCard(
     classroom: Classroom,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
+        onClick = onClick,
         shape = RoundedCornerShape(22.dp),
         border = BorderStroke(1.dp, AppBorder),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -55,7 +58,7 @@ fun ClassroomCard(
                         tint = AppIconTint
                     )
                 },
-                text = "Capacity: ${classroom.capacity}"
+                text = UserMessages.ClassroomDetail.CAPACITY_PREFIX + classroom.capacity
             )
 
             ClassroomInfoRow(
