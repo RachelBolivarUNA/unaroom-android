@@ -1,15 +1,43 @@
+# Android / Gradle
 *.iml
-.gradle
+.gradle/
 /local.properties
-/.idea/caches
-/.idea/libraries
+local.properties
+/build/
+build/
+app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+# Android Studio / IntelliJ IDEA
+/.idea/caches/
+/.idea/libraries/
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+.idea/caches/
+.idea/workspace.xml
+# Firebase / Google Services
+# Real credentials - never commit these.
+# Copy google-services.example.json -> google-services.json to run the app.
+google-services.json
+*-service-account*.json
+*serviceAccount*.json
+firebase-adminsdk*.json
+# .NET / Visual Studio (if any backend)
+bin/
+obj/
+TestResults/
+*.user
+*.suo
+.vs/
+appsettings.Development.json
+# OS-generated
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
