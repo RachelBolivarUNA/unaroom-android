@@ -35,9 +35,11 @@ TestResults/
 appsettings.Development.json
 # OS-generated
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Thumbs.db
-ehthumbs.db
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Firebase — project-specific; download from Firebase Console (do not commit real keys in public repos).
+app/google-services.json
