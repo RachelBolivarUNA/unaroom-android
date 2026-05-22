@@ -18,6 +18,13 @@ app/build/
 /.idea/assetWizardSettings.xml
 .idea/caches/
 .idea/workspace.xml
+# Machine-specific Android Studio state files
+.idea/deploymentTargetSelector.xml
+.idea/appInsightsSettings.xml
+.idea/markdown.xml
+.idea/copilotDiffState.xml
+.idea/usage.statistics.xml
+.idea/shelf/
 # Firebase / Google Services
 # Real credentials - never commit these.
 # Copy google-services.example.json -> google-services.json to run the app.
