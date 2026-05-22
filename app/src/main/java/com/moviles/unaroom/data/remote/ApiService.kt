@@ -2,6 +2,7 @@ package com.moviles.unaroom.data.remote
 
 import com.moviles.unaroom.core.AppConstants
 import com.moviles.unaroom.data.Classroom
+import com.moviles.unaroom.data.remote.model.FcmTokenRequest
 import com.moviles.unaroom.data.remote.model.LoginRequest
 import com.moviles.unaroom.data.remote.model.ReservationDto
 import com.moviles.unaroom.data.remote.model.ReservationRequest
@@ -24,4 +25,14 @@ interface ApiService {
 
     @POST(AppConstants.Api.Paths.RESERVATIONS)
     suspend fun createReservation(@Body request: ReservationRequest): Response<Unit>
+
+    /**
+     * Registers the device FCM token with the backend.
+     * POST /api/device-tokens/{userId}
+     */
+    @POST(AppConstants.Api.Paths.DEVICE_TOKEN)
+    suspend fun registerFcmToken(
+        @Path("userId") userId: String,
+        @Body request: FcmTokenRequest
+    ): Response<Unit>
 }

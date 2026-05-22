@@ -11,3 +11,12 @@ data class UserDto(
     val name: String,
     val email: String
 )
+
+/**
+ * Body sent to POST /api/device-tokens/{userId}.
+ * The userId is passed as a path parameter; only the token goes in the request body.
+ */
+data class FcmTokenRequest(
+    val token: String
+)
+

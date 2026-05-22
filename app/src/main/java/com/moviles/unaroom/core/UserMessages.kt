@@ -75,6 +75,7 @@ object UserMessages {
 
     object Network {
         const val COULD_NOT_CONNECT = "Could not connect to server"
+        const val OFFLINE_BANNER = "You're offline – showing local data"
     }
 
     object Navigation {

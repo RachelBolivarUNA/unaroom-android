@@ -14,6 +14,7 @@ object AppConstants {
 
         object Paths {
             const val AUTH_LOGIN = "api/auth/login"
+            const val DEVICE_TOKEN = "api/device-tokens/{userId}"
             const val CLASSROOMS = "api/classrooms"
             const val RESERVATIONS_BY_USER = "api/reservations/user/{userId}"
             const val RESERVATIONS = "api/reservations"
