@@ -1,7 +1,6 @@
 # Android / Gradle
 *.iml
 .gradle/
-/local.properties
 local.properties
 /build/
 build/
@@ -9,6 +8,7 @@ app/build/
 /captures/
 .externalNativeBuild/
 .cxx/
+
 # Android Studio / IntelliJ IDEA
 /.idea/caches/
 /.idea/libraries/
@@ -18,6 +18,7 @@ app/build/
 /.idea/assetWizardSettings.xml
 .idea/caches/
 .idea/workspace.xml
+
 # Machine-specific Android Studio state files
 .idea/deploymentTargetSelector.xml
 .idea/appInsightsSettings.xml
@@ -25,6 +26,7 @@ app/build/
 .idea/copilotDiffState.xml
 .idea/usage.statistics.xml
 .idea/shelf/
+
 # Firebase / Google Services
 # Real credentials - never commit these.
 # Copy google-services.example.json -> google-services.json to run the app.
@@ -32,6 +34,7 @@ google-services.json
 *-service-account*.json
 *serviceAccount*.json
 firebase-adminsdk*.json
+
 # .NET / Visual Studio (if any backend)
 bin/
 obj/
@@ -40,13 +43,12 @@ TestResults/
 *.suo
 .vs/
 appsettings.Development.json
+
 # OS-generated
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-
-# Firebase — project-specific; download from Firebase Console (do not commit real keys in public repos).
-app/google-services.json
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
