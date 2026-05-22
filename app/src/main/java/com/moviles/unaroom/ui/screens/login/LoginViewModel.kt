@@ -3,7 +3,9 @@ package com.moviles.unaroom.ui.screens.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.messaging.FirebaseMessaging
 import com.moviles.unaroom.core.UserMessages
+import com.moviles.unaroom.data.AppContainer
 import com.moviles.unaroom.data.AuthSession
 import com.moviles.unaroom.data.remote.model.UserDto
 import com.moviles.unaroom.data.repository.ApiResult
@@ -37,10 +39,24 @@ class LoginViewModel(
                 is ApiResult.Success -> {
                     AuthSession.setUser(result.data)
                     _uiState.value = LoginUiState(user = result.data)
+                    // After login, register the FCM token so the backend can push notifications.
+                    registerFcmTokenWithBackend()
                 }
                 is ApiResult.Error -> {
                     _uiState.value = LoginUiState(errorMessage = result.message)
                 }
+            }
+        }
+    }
+
+    /**
+     * Fetches the current FCM token and registers it with the backend for this user.
+     * Non-fatal — a failure here does not affect the login flow.
+     */
+    private fun registerFcmTokenWithBackend() {
+        FirebaseMessaging.getInstance().token.addOnSuccessListener { token ->
+            viewModelScope.launch {
+                AppContainer.fcmTokenRepository.registerToken(token)
             }
         }
     }
